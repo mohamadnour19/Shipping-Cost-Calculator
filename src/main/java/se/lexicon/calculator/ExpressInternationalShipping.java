@@ -6,7 +6,7 @@ import se.lexicon.model.Speed;
 import se.lexicon.service.ShippingCostCalculator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import jakarta.annotation.PostConstruct;
+
 
 @Component
 public class ExpressInternationalShipping implements ShippingCostCalculator {
@@ -28,8 +28,5 @@ public class ExpressInternationalShipping implements ShippingCostCalculator {
         return baseCost + costPerKg * r.weightKg();
     }
 
-    @PostConstruct
-    public void init() {
-        System.out.println("Spring: ExpressInternationalShipping bean created");
-    }
+
 }
